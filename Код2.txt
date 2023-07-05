@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int NSD(int a, int b) 
+{
+    while (b != 0) 
+    {
+        int m = b;
+        b = a % b;
+        a = m;
+    }
+    return a;
+}
+
+int NSK(int arr[], int n) 
+{
+    int ksn = arr[0];
+
+    for (int i = 1; i < n; i++) 
+    {
+        ksn = (ksn * arr[i]) / NSD(ksn, arr[i]);
+    }
+
+    return ksn;
+}
+
+int main() 
+{
+    int i, n;
+
+    printf("Введіть кількість чисел: ");
+    scanf("%d", &n);
+    int numbers[n];
+    if(n<=20 && n>=2)
+    {
+       printf(" ");
+       for (i = 0; i < n; i++) 
+       {
+           scanf("%d", &numbers[i]);
+       }
+     
+       int ksn = NSK(numbers, n);
+       printf("Найменше спільне кратне: %d\n", ksn);
+    }
+    else
+    {
+        printf(" ");
+    }
+
+    return 0;
+}
