@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int m, n, count=0;
+    printf("Введіть довжину послідовності n: ");
+    scanf("%d", &n);
+    if (n>1 && n<150)
+    {
+        for(m=1; m<=n; m++)
+        {
+            n%m == n/m;
+            if(n % m == n/m)
+            {
+                count+=1;
+            }
+        }
+        printf("Кількість рівних дільників числа %d: %d", n, count);
+    }
+    else
+    {
+        printf(" ");
+    }
+
+    return 0;
+}
