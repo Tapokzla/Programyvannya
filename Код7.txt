@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float x1, x2, y1, y2, r1, r2, x, d;
+    printf("Введіть  х1, у1, r1 та х2, у2, r2:\n");
+    scanf("%f\n %f\n %f\n %f\n  %f\n  %f", &x1, &y1, &r1, &x2, &y2, &r2);
+    x=(x2-x1)*(x2-x1)+(y2-y1)*(y2-y1);
+    d=sqrt(x);
+    if(x1==x2 && y1==y2 && r1==r2)
+    {
+        printf("Точок: -1");
+    }
+    else
+    {
+        if ((r1+r2)*(r1+r2)==d || (r1-r2)*(r1-r2)==d)
+        {
+            printf("Точок: 1");
+        }
+        else
+        {
+            if((r1+r2)*(r1+r2)<d || (r1-r2)*(r1-r2)>d)
+            {
+                printf("Точок: 0");
+            }
+            else
+            {
+                if((r1+r2)*(r1+r2)>d || (r1-r2)*(r1-r2)<d)
+                {
+                    printf("Точок: 2");
+                }
+            }
+        }
+    }
+
+    return 0;
+}
